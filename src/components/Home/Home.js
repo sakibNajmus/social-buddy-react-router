@@ -15,6 +15,7 @@ const Home = () => {
     return (
         <div className="all-post">
             <Container>
+            <h1>All Posts</h1>
             <Grid container spacing={3}>
             <Grid item xs>
                 {

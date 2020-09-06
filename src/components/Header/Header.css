@@ -3,11 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 50px; */
-    /* position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0; */
 }
 
 .head-logo{
@@ -24,8 +19,4 @@
 
 .head-menu{
     padding: 30px 0;
-}
-
-.head-menu:hover{
-    color: aqua;
 }

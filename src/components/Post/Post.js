@@ -29,7 +29,7 @@ const Post = (props) => {
     }
 
     return (
-        <div className="post">            
+        <div className="post">           
                 <Card className="Card" className={classes.root}>
                 <CardActionArea>
                     <CardContent>
