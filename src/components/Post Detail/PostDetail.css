@@ -1,0 +1,9 @@
+.post-details{
+    margin-top: 20px;
+    padding: 5px 20px;    
+}
+
+.post-details:hover{
+    box-shadow: 2px 2px 4px gray;
+    border-radius: 10px;
+}

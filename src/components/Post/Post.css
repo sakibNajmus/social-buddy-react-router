@@ -1,0 +1,12 @@
+.post{
+    padding-top: 50px;
+}
+
+.post-head{
+    text-align: center;
+}
+
+.card-details{
+    display: flex;
+    float: left;
+}
