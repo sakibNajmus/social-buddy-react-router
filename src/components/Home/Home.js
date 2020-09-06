@@ -7,6 +7,7 @@ const Home = () => {
     const [posts, setPosts] = useState([]);
     // console.log(posts)
 
+    // Get method to bring posts
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res => res.json())
@@ -19,7 +20,7 @@ const Home = () => {
             <Grid container spacing={3}>
             <Grid item xs>
                 {
-                    posts.map(post => <Post post ={post}></Post>)
+                    posts.map(post => <Post key={post.id} post ={post}></Post>)
                 }            
             </Grid>            
             </Grid>

@@ -19,10 +19,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     margin: theme.spacing(1),
   },
-  svg: {
-    width: 100,
-    height: 100,
-  },
   polygon: {
     fill: theme.palette.common.white,
     stroke: theme.palette.divider,
@@ -35,10 +31,9 @@ const PostDetail = () => {
 
     const [posts, setPosts] = useState({})
 
-    const [open, setOpen] = useState(false);
+    const {title, body, userId} = posts;
 
-    const {title, body, userId} = posts
-
+    // Get Method to Bring Specific posts using postId
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
         .then(res => res.json())
@@ -46,24 +41,22 @@ const PostDetail = () => {
     }, [])
 
     const [comments, setComments] = useState([])
-    // console.log(comments)
 
-    // const {name, email} = comments;
-    // console.log(email)
-
+    // Get Method to Bring Comments
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
         .then(res => res.json())
         .then(data => setComments(data))
     }, [])
 
+    // Material-ui code
+    const classes = useStyles();
+    const [checked, setChecked] = React.useState(false);
 
-        const classes = useStyles();
-        const [checked, setChecked] = React.useState(false);
+    const handleChange = () => {
+        setChecked((prev) => !prev);
+    };
 
-        const handleChange = () => {
-            setChecked((prev) => !prev);
-        };
     return (
         <Container>
             <div className="post-details">                    
@@ -80,7 +73,7 @@ const PostDetail = () => {
                 <Fade in={checked}>
                 <Paper elevation={4} className={classes.paper}>
                         {
-                            comments.map(comment => <Comment comment={comment}></Comment>)
+                            comments.map(comment => <Comment key={comment.id} comment={comment}></Comment>)
                         }
                 </Paper>
                 </Fade>

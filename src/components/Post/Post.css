@@ -1,5 +1,7 @@
 .post{
     padding-bottom: 20px;
+    display: inline-flex;
+    margin-left: 45px;
 }
 
 .post-head{
