@@ -12,7 +12,7 @@ const Comment = (props) => {
         
     return (
         <div className="comment-details">             
-                <h6><span><img src={users[0].image} alt=""/></span> {email}</h6>
+                <h6><span className="comment-image"><img src={users[0].image} alt=""/></span> {email}</h6>
                 <p> <strong>Comment:</strong> {body}</p>
         </div>
     );
